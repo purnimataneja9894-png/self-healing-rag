@@ -1,0 +1,12 @@
+streamlit
+langchain
+langchain-core
+langchain-community
+langchain-groq
+langchain-chroma
+langchain-text-splitters
+langgraph
+chromadb
+fastembed
+pypdf
+python-dotenv
