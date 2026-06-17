@@ -123,7 +123,7 @@ def build_retriever(files):
     if not docs:
         return None, 0, 0
     chunks = RecursiveCharacterTextSplitter(chunk_size=800, chunk_overlap=100).split_documents(docs)
-    vs = Chroma.from_documents(chunks, embeddings, collection_name=f"kb_{uuid.uuid4().hex[:8]}")
+    vs = InMemoryVectorStore.from_documents(chunks, embeddings)
     return vs.as_retriever(search_kwargs={"k": 4}), len(docs), len(chunks)
 
 class GraphState(TypedDict):
